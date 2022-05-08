@@ -1,7 +1,7 @@
 name: PrisonEssentials
 author: iChocoMC_
-main: me.ichoco.prison.PrisonE
-version: 0.9
+main: me.ichoco.prison.PrisonEssentialPlugin
+version: 1.0
 
 commands:
   help:
@@ -22,3 +22,5 @@ permissions:
      description: "Permission for command: /pereload | prison.reload"
     prison.setspawn:
      description: "Permission for command: /setspawn | prison.setspawn"
+    prison.spawn:
+     description: "Permission for command: /setspawn | prison.spawn"

@@ -20,8 +20,8 @@ public class PrisonEssentialPlugin extends JavaPlugin {
         MessageUtil.log(" &7By iChocoMC_ &8| &61.0");
         MessageUtil.log("");
 
-        registerCommands();
         registerEvents();
+        registerCommands();
     }
 
     private void registerEvents() {
