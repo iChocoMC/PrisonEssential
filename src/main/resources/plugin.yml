@@ -1,0 +1,24 @@
+name: PrisonEssentials
+author: iChocoMC_
+main: me.ichoco.prison.PrisonE
+version: 0.9
+
+commands:
+  help:
+     description: "Command for help: /help"
+  fly:
+     description: "Enable or disable flight: /fly"
+  pereload:
+     description: "Reload plugin config: /pereload"
+  setspawn:
+     description: "Set spawn: /setspawn"
+  spawn:
+     description: "Go to spawn: /spawn"
+     
+permissions:
+    prison.fly:
+     description: "Permission for command: /fly | prison.fly"
+    prison.reload:
+     description: "Permission for command: /pereload | prison.reload"
+    prison.setspawn:
+     description: "Permission for command: /setspawn | prison.setspawn"
