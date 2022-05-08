@@ -17,7 +17,7 @@ public class PereloadCommand implements CommandExecutor {
             return true;
         }
 
-        PrisonEssentialPlugin.getInstance().onDisable();
+        PrisonEssentialPlugin.getInstance().reloadConfig();
         PrisonEssentialPlugin.getInstance().onEnable();
 
         sender.sendMessage("PrisonEssentials reloaded");
