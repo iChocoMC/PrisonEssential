@@ -12,8 +12,8 @@ enable-autopickup: true
 messages:
   no_permission: "&4&lERROR: &cYou dont have permissions."
 
-  quit: "&8[&c-&8] &r"
-  join: "&8[&a+&8] &r"
+  quit: "&8[&c-&8] &r{player_name}"
+  join: "&8[&a+&8] &r{player_name}"
   
   fly_enable: "&9&l FLY MODE &7| &a&lENABLE"
   fly_disable: "&9&l FLY MODE &7| &c&lDISABLE"
