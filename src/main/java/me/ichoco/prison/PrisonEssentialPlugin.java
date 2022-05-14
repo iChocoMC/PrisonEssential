@@ -38,7 +38,7 @@ public class PrisonEssentialPlugin extends JavaPlugin {
 
     private void registerCommands() {
         this.getCommand("pereload").setExecutor(new PereloadCommand());
-        this.getCommand("setspawn").setExecutor(new SetspawnCommand());
+        this.getCommand("setspawn").setExecutor(new SetSpawnCommand());
         this.getCommand("spawn").setExecutor(new SpawnCommand());
         this.getCommand("help").setExecutor(new HelpCommand());
         this.getCommand("fly").setExecutor(new FlyCommand());

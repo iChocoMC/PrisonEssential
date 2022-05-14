@@ -20,15 +20,16 @@ public class PlayerListener implements Listener {
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
         Player player = event.getPlayer();
-        player.sendMessage(MessageUtil.translate(this.config.getString("messages.welcome")));
-        event.setJoinMessage(String.valueOf(MessageUtil.translate(this.config.getString("messages.join"))) + player.getDisplayName());
+        player.sendMessage(MessageUtil.translate(config.getString("messages.welcome")));
+        event.setJoinMessage(MessageUtil.translate(config.getString("messages.join")
+                .replace("{player_name}", player.getDisplayName())));
         teleportToSpawn(player);
     }
 
     @EventHandler
     public void onPlayerQuit(PlayerQuitEvent event) {
-        Player player = event.getPlayer();
-        event.setQuitMessage(MessageUtil.translate(this.config.getString("messages.quit")) + player.getDisplayName());
+        event.setQuitMessage(MessageUtil.translate(config.getString("messages.quit")
+                .replace("{player_name}", event.getPlayer().getDisplayName())));
     }
 
     @EventHandler
@@ -37,9 +38,9 @@ public class PlayerListener implements Listener {
     }
 
     private void teleportToSpawn(Player player) {
-        if (LocationUtil.parseToLocation(this.config.getString("LOCATION.SPAWN")) != null 
-                && this.config.getString("LOCATION.SPAWN") != null) {
-            player.teleport(LocationUtil.parseToLocation(this.config.getString("LOCATION.SPAWN")));
+        if (LocationUtil.parseToLocation(config.getString("location.spawn")) != null
+                && config.getString("location.spawn") != null) {
+            player.teleport(LocationUtil.parseToLocation(config.getString("location.spawn")));
         }
     }
 }

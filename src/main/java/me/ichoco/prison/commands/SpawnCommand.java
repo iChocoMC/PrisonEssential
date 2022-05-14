@@ -16,18 +16,18 @@ public class SpawnCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         if (!(sender instanceof Player)) {
-            sender.sendMessage("Only players");
+            sender.sendMessage(MessageUtil.translate("&cOnly players"));
             return true;
         }
 
         if (!sender.hasPermission("prison.spawn")) {
-            sender.sendMessage(MessageUtil.translate(this.config.getString("messages.no_permission")));
+            sender.sendMessage(MessageUtil.translate(config.getString("messages.no_permission")));
             return true;
         }
 
         Player player = (Player) sender;
 
-        player.teleport(LocationUtil.parseToLocation(config.getString("LOCATION.SPAWN")));
+        player.teleport(LocationUtil.parseToLocation(config.getString("location.spawn")));
         player.sendMessage(MessageUtil.translate(config.getString("messages.teleported_to_spawn")));
         return true;
     }
