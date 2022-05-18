@@ -15,12 +15,11 @@ import org.bukkit.event.block.BlockBreakEvent;
 
 public class BlockBreakListener implements Listener {
 
-    @EventHandler(priority = EventPriority.HIGHEST)
+    @EventHandler(priority = EventPriority.MONITOR)
     public void onBlockBreak(BlockBreakEvent event) {
         if (event.isCancelled()) {
             return;
         }
-        
         Block block = event.getBlock();
         
         block.getDrops().forEach(drops -> drops(event.getPlayer(), block, drops));
@@ -29,11 +28,10 @@ public class BlockBreakListener implements Listener {
     private void drops(Player player, Block block, ItemStack item) {
         ItemStack pItem = player.getItemInHand();
         if (pItem.hasItemMeta() && pItem.getItemMeta().hasEnchant(Enchantment.LOOT_BONUS_BLOCKS)) {
-            int level = pItem.getItemMeta().getEnchantLevel(Enchantment.LOOT_BONUS_BLOCKS);
+            int level = pItem.getEnchantmentLevel(Enchantment.LOOT_BONUS_BLOCKS);
             int random = (new Random()).nextInt(level) + 1;
             item.setAmount(random);
         }
-        
         player.getInventory().addItem(item);
         block.setType(Material.AIR);
     }
