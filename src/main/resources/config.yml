@@ -1,16 +1,27 @@
-# true = enable autopickup
-# false = disable autopickup
+
+# true = enable the option
+# false = disable the option
 
 enable-autopickup: true
 
-# Features:
-
-# Fortune support
-# No break worldguard
-# Less resource usage
+#
+#	AutoPickup Features:
+#
+# Less resource usage (LightWeight)
+# No break WorldGuard (priority: Monitor)
+# Support Fortune (All levels)
 
 messages:
-  no_permission: "&4&lERROR: &cYou dont have permissions."
+  no_permission: "&4&lERROR: &cYou need the permission: &6{permission}"
+
+#
+#   Commands with permissions:
+#
+# /fly - prison.fly
+# /pereload - prison.reload
+# /spawn - prison.spawn
+# /setspawn - prison.setspawn
+#
 
   quit: "&8[&c-&8] &r{player_name}"
   join: "&8[&a+&8] &r{player_name}"
@@ -18,28 +29,35 @@ messages:
   fly_enable: "&9&l FLY MODE &7| &a&lENABLE"
   fly_disable: "&9&l FLY MODE &7| &c&lDISABLE"
   
-  teleported_to_spawn: "&aYou were teleported to spawn successfully"
-  
-  welcome: |-
-   &f
-   &9&l WELCOME &7| &b&lMESSAGE
-   &f &f
-   &7 This is a example
-   &7 You can edit this in &bconfig.yml
-   &f &f
-  
-  spawn: |-
-   &f
-   &9&l SPAWN &7| &e&lINCOMING
-   &f &f
-   &7 Go to spawn...
-   &f &f
-   
+  teleported_to_spawn: "&aYou were teleported to spawn"
+
+#
+#   You can add multiline or oneline messages
+#
+#   Examples:
+#
+# help: "For help use /helpop (message)"
+#
+# teleported_to_spawn: |-
+#   &f
+#   &9&l  SPAWN &7| &e&lTELEPORT
+#   &f
+#   &a You were teleported to spawn
+# 
+
   help: |-
-   &f
-   &9&l HELP &7| &b&lCOMMAND
-   &f &f
-   &7 &7Hi, this is a example
-   &7 &7You can edit this in &bconfig.yml
-   &f &f
-   &7 &7Plugin by &9iChocoMC_ &7| &91.0
+    &f
+    &9&l HELP &7| &b&lCOMMAND
+    &f
+    &7 &7Hi, this is a example
+    &7 &7You can edit this in &bconfig.yml
+    &f
+    &7 &7Plugin by &9iChocoMC_ &7| &91.1
+
+  welcome: |-
+    &f
+    &9&l WELCOME &7| &b&lMESSAGE
+    &f
+    &7 This is a example
+    &7 You can edit this in &bconfig.yml
+    &f &f
