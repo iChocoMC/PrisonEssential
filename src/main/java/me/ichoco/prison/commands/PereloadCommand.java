@@ -13,7 +13,7 @@ public class PereloadCommand implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (!sender.hasPermission("prison.reload")) {
             sender.sendMessage(MessageUtil.translate(PrisonEssentialPlugin.getInstance()
-                    .getConfig().getString("messages.no_permission")));
+                .getConfig().getString("messages.no_permission").replace("{permission}", "prison.reload")));
             return true;
         }
 
