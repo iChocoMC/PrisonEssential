@@ -22,7 +22,8 @@ public class SetSpawnCommand implements CommandExecutor {
         }
 
         if (!sender.hasPermission("prison.setspawn")) {
-            sender.sendMessage(MessageUtil.translate(config.getString("messages.no_permission")));
+      sender.sendMessage(MessageUtil.translate(config.getString("messages.no_permission").replace(
+          "{permission}", "prison.setspawn")));
             return true;
         }
 
