@@ -1,7 +1,5 @@
 package me.ichoco.prison.listeners;
 
-import java.util.Random;
-
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.enchantments.Enchantment;
@@ -20,19 +18,21 @@ public class BlockBreakListener implements Listener {
         if (event.isCancelled()) {
             return;
         }
+
         Block block = event.getBlock();
-        
-        block.getDrops().forEach(drops -> drops(event.getPlayer(), block, drops));
+        block.getDrops().forEach(drops -> drops(event.getPlayer(), drops));
+ 
+        block.setType(Material.AIR);
     }
 
-    private void drops(Player player, Block block, ItemStack item) {
+    private void drops(Player player, ItemStack item) {
         ItemStack pItem = player.getItemInHand();
-        if (pItem.hasItemMeta() && pItem.getItemMeta().hasEnchant(Enchantment.LOOT_BONUS_BLOCKS)) {
+        if (pItem.getEnchantments().containsKey(Enchantment.LOOT_BONUS_BLOCKS)) {
+       
             int level = pItem.getEnchantmentLevel(Enchantment.LOOT_BONUS_BLOCKS);
-            int random = (new Random()).nextInt(level) + 1;
-            item.setAmount(random);
+            
+            item.setAmount((level));
+            player.getInventory().addItem(item);
         }
-        player.getInventory().addItem(item);
-        block.setType(Material.AIR);
     }
 }
