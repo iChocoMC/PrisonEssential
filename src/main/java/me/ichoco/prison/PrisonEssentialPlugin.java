@@ -17,7 +17,7 @@ public class PrisonEssentialPlugin extends JavaPlugin {
 
         MessageUtil.log("");
         MessageUtil.log(" &e&lPrisonEssentials");
-        MessageUtil.log(" &7By iChocoMC_ &8| &61.0");
+        MessageUtil.log(" &7By iChocoMC_ &8| &61.2");
         MessageUtil.log("");
 
         registerEvents();

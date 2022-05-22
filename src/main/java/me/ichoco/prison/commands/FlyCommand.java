@@ -29,13 +29,13 @@ public class FlyCommand implements CommandExecutor {
         Player player = (Player) sender;
 
         if (!player.getAllowFlight()) {
-            player.sendMessage(MessageUtil.translate(config.getString("messages.fly_disable")));
+            player.sendMessage(MessageUtil.translate(config.getString("messages.fly_enable")));
             player.setAllowFlight(!player.getAllowFlight());
             return true;
         }
         
         player.setAllowFlight(!player.getAllowFlight());
-        player.sendMessage(MessageUtil.translate(config.getString("messages.fly_enable")));
+        player.sendMessage(MessageUtil.translate(config.getString("messages.fly_disable")));
         return true;
     }
 }

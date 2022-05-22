@@ -33,6 +33,8 @@ public class BlockBreakListener implements Listener {
             
             item.setAmount((level));
             player.getInventory().addItem(item);
+            return;
         }
+            player.getInventory().addItem(item);
     }
 }
